@@ -1,1 +1,113 @@
-/* Put custom styles here */
+:root {
+    /* Basic Color Scheme */
+    --bg-color: #0d0628; /* Deep dark blue */
+    --fg-color: #c2a2d1; /* Soft purple for foreground text */
+    --comfy-menu-bg: #1a0e3b; /* Dark purple for menu backgrounds */
+    --comfy-input-bg: #120f23; /* Darker shade for input backgrounds */
+    --input-text: #f4ecf7; /* Lighter text for inputs */
+    --descrip-text: #f7c5ff; /* Neon purple for descriptions */
+    --drag-text: #ffcaff; /* Neon light pink for draggable elements */
+    --error-text: #ff80ed; /* Neon pink for error texts */
+    --border-color: #5d3b8f; /* Dark purple borders */
+    --tr-even-bg-color: #120f23; /* Darker shade for even rows */
+    --tr-odd-bg-color: #1a0e3b; /* Dark purple for odd rows */
+}
+
+/* Additional Customizations */
+.comfy-btn, .comfy-modal button, .comfy-menu > button {
+    background-color: var(--comfy-input-bg);
+    color: var(--input-text);
+    border-color: var(--border-color);
+}
+
+.comfy-btn:hover:not(:disabled), .comfy-menu > button:hover, .comfy-modal button:hover {
+    background-color: #210f38; /* Slightly lighter shade on hover */
+    color: #f4ecf7;
+    cursor: pointer;
+}
+
+.comfy-menu span.drag-handle {
+    color: var(--drag-text);
+}
+
+.comfy-modal {
+    background-color: var(--comfy-menu-bg);
+    color: var(--error-text);
+}
+
+/* Adjusting table styles */
+.comfy-table tr:nth-child(even) {
+    background-color: var(--tr-even-bg-color);
+}
+
+.comfy-table tr:nth-child(odd) {
+    background-color: var(--tr-odd-bg-color);
+}
+
+.comfy-table td, .comfy-table th {
+    border-color: var(--border-color);
+}
+
+/* Update styles for search box and context menu as needed */
+.litegraph.litesearchbox, .litegraph.litecontextmenu {
+    background-color: var(--comfy-menu-bg);
+    color: var(--input-text);
+	
+	.comfy-menu {
+    font-size: 15px;
+    position: absolute;
+    top: 0; /* Align to the top */
+    left: 0; /* Start from the left */
+    right: 0; /* Stretch across the top */
+    text-align: center;
+    z-index: 999;
+    display: flex; /* Use flexbox for horizontal alignment */
+    flex-direction: row; /* Align items in a row */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    background-color: var(--comfy-menu-bg);
+    padding: 10px;
+    border-radius: 0 0 8px 8px; /* Rounded corners at the bottom */
+}
+
+.comfy-menu > button, .comfy-menu-btns button {
+    margin: 0 10px; /* Spacing between buttons */
+}
+
+/* If there are any other specific adjustments needed for buttons or other elements within the menu, add them here */
+.comfy-menu button {
+    font-size: 14px; /* Adjust font size as needed */
+    padding: 5px 10px; /* Adjust padding to control button size */
+    margin: 0 5px; /* Space between buttons */
+    text-align: center; /* Ensure text is centered */
+    min-width: 80px; /* Minimum width of buttons */
+    max-width: 150px; /* Maximum width of buttons */
+    overflow: hidden; /* Prevent text overflow */
+    white-space: nowrap; /* Prevent text from wrapping */
+    text-overflow: ellipsis; /* Add an ellipsis for overflow text */
+}
+
+.comfy-menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* ... other styles ... */
+}
+.comfy-menu .dropdown-menu {
+    position: absolute;
+    top: 100%; /* Position below the menu bar */
+    left: 0;
+    display: none; /* Hide by default */
+    /* Additional styling for dropdowns */
+}
+
+.comfy-menu .dropdown-menu.active {
+    display: block; /* Show on activation */
+}
+
+/* Style for menu items within the dropdown */
+.comfy-menu .dropdown-menu .menu-item {
+    white-space: nowrap;
+    /* Additional item styling */
+}
